@@ -16,6 +16,8 @@ app.context.render = co.wrap(render({
   ext: 'html',
 }));
 
+
+
 app.use(serve(CONFIG.get('staticDir')))
 
 initController.init(app, router)
