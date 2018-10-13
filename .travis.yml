@@ -12,15 +12,9 @@ before_install:
 - chmod 600 ~/.ssh/travis
 - echo -e "Host 101.200.47.112\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 script:
-- npm run supervisor
+- npm run apitest
 after_script:
-- cd ./dist
-- git init
-- git config user.name "${U_NAME}"
-- git config user.email "${U_EMAIL}"
-- git add .
-- git commit -m "Update tools"
-- git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:${P_BRANCH}
+- scp -o stricthostkeychecking=no  -r ./public/* root@101.200.47.112:/usr/travis
 branches:
   only:
   - master
