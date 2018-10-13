@@ -1,0 +1,30 @@
+div, p {margin: 0; padding: 0;}
+.wrap {width: 300px; height: 300px; position: relative; margin: 200px auto;}
+
+.palm {height: 195px; width: 120px; position: absolute; top: 70px; left: 120px; 
+background-color: #f3c5ad; border: 1px solid #cb986d; border-radius: 5px;}
+.palm::before {content: ""; position: absolute; top: 25px; left: -100px; width: 120px; 
+height: 160px; background-color: #f3c5ad; border-top: 1px solid #cb986d;}
+.palm:hover {cursor: pointer;}
+
+.finger {position: absolute; right: -30px; height: 48px; width: 55px; border: 1px solid #cb986d; 
+border-left: none; border-radius: 0 25px 25px 0; background-color: #f3c5ad;}
+.finger1 {top: -43px; right: 15px; transform: rotate(-45deg); width: 100px; border-bottom: none;}
+.finger2 {top: -1px;}
+.finger3 {top: 48px;}
+.finger4 {top: 97px;}
+.finger5 {top: 146px;}
+.finger::after {content: ''; height: 44px; width: 50px;
+position: absolute; top: 2px; right: 2px; border-radius: 0 22px 22px 0;
+background: -webkit-linear-gradient(left, #f3c5ad, #f9ded0 50%, #fcf2ed 100%);
+background: -moz-linear-gradient(left, #f3c5ad, #f9ded0 50%, #fcf2ed 100%);
+background: -ms-linear-gradient(left, #f3c5ad, #f9ded0 50%, #fcf2ed 100%);
+background: -o-linear-gradient(left, #f3c5ad, #f9ded0 50%, #fcf2ed 100%);
+background: linear-gradient(left, #f3c5ad, #f9ded0 50%, #fcf2ed 100%);}
+.finger1::before {content: ''; height: 42px; width: 30px;
+position: absolute; top: 2px; right: 40px; border-radius: 0 22px 22px 0; z-index: 1;
+background: -webkit-linear-gradient(left, #f3c5ad, #dfb7a1 50%, #e0baa7 100%);
+background: -moz-linear-gradient(left, #f3c5ad, #dfb7a1 50%, #e0baa7 100%);
+background: -ms-linear-gradient(left, #f3c5ad, #dfb7a1 50%, #e0baa7 100%);
+background: -o-linear-gradient(left, #f3c5ad, #dfb7a1 50%, #e0baa7 100%);
+background: linear-gradient(left, #f3c5ad, #dfb7a1 50%, #e0baa7 100%);}

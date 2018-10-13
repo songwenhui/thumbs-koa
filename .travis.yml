@@ -1,0 +1,27 @@
+language: node_js
+node_js:
+- 8.12.0
+cache:
+  directories:
+  - node_modules
+install:
+- npm install
+before_install:
+- openssl aes-256-cbc -K $encrypted_216725e5a025_key -iv $encrypted_216725e5a025_iv
+  -in travis.enc -out travis -d
+script:
+- npm run supervisor
+after_script:
+- cd ./dist
+- git init
+- git config user.name "${U_NAME}"
+- git config user.email "${U_EMAIL}"
+- git add .
+- git commit -m "Update tools"
+- git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:${P_BRANCH}
+branches:
+  only:
+  - master
+env:
+  global: 
+

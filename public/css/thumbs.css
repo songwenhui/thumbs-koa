@@ -1,0 +1,13 @@
+.praise_1 {position: absolute; font-size: 100px; color: yellow;}
+.text-show {display: block; animation: animate 1s;}
+
+@keyframes animate{
+	0%{
+		top: -80px;
+		opacity: 1;
+	}
+	100%{
+		top: -150px;
+		opacity: 0;
+	}
+}
