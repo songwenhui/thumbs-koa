@@ -7,8 +7,10 @@ cache:
 install:
 - npm install
 before_install:
-- openssl aes-256-cbc -K $encrypted_216725e5a025_key -iv $encrypted_216725e5a025_iv
-  -in travis.enc -out travis -d
+- openssl aes-256-cbc -K $encrypted_2c82ee9ea59e_key -iv $encrypted_2c82ee9ea59e_iv
+  -in travis.enc -out ~/.ssh/travis -d
+- chmod 600 ~/.ssh/travis
+- echo -e "Host 101.200.47.112\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 script:
 - npm run supervisor
 after_script:
@@ -24,4 +26,3 @@ branches:
   - master
 env:
   global: 
-
